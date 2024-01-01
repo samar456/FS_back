@@ -13,8 +13,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/', router);
 
-const PORT = process.env.PORT|| 8000;
+const PORT =  process.env.PORT || 8000;
 
-DBConnection();
+       DBConnection();
+      app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
+ 
+  
 
-app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
